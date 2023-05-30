@@ -133,7 +133,7 @@ class SignUpController extends Controller {
             'tickets' => $UserTickets,
             'email' => $this->userEmail,
             'password' => Hashing::hashPassword($this->userPassword),
-            'verificationToken' => (MailSender::getInstance()->isConnected()) ? $this->verificationToken : null,
+            'verificationToken' => null,
             'notRegistered' => Controller::request('indirectSignUp') ?  true : null,
             'xownCustomfieldvalueList' => $this->getCustomFieldValues()
         ]);
